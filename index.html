@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<LINK REL=StyleSheet HREF="css.css" TYPE="text/css" MEDIA=screen>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="">
+
+var myVid = document.getElementById('videoElement');
+
+$('.getTime').on('click', function() {
+  var mycurrentTime = myVid.currentTime;
+  $(".bookmarkList").append("<a href='javascript:;' rel='" + mycurrentTime + "' class='bookmarkLink'>" + mycurrentTime + "sec - Click to Play</a>");
+
+  $('.bookmarkList a').click(function() {
+    myVid.currentTime = $(this).attr('rel');
+    myVid.play();
+  });
+});
+
+
+</script>
+
+
+
+	<title>VideoTagger</title>
+
+</head>
+<body>
+
+
+
+  <br>
+
+<div class="bookmarkList">
+  <h2>
+      Bookmark List
+  </h2>
+</div>
+
+<div class="vidBx">
+  <a href="javascript:;" class="getTime">Bookmark Here</a>
+  <video id="videoElement" autoplay controls width="100%">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+    <p>Your browser does not support the video tag.</p>
+  </video>
+</div>
+
+
+
+
+
+
+
+
+
+<!--- <iframe src="https://drive.google.com/file/d/1jwl03y73twdX63HgQaXbUBHMbjX9tGwG/preview" width="640" height="480" allow="autoplay"></iframe>
+
+--->
+
+  <!---<iframe width="100%" height="100%" src="https://drive.google.com/file/d/1jwl03y73twdX63HgQaXbUBHMbjX9tGwG/preview"></iframe> -->
+
+
+	
+</body>
+</html>
